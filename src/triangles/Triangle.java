@@ -19,6 +19,12 @@ public class Triangle {
         this.c = c;
     }
     
+    public Triangle(double a){           
+        this.a = a;
+        this.b = a;
+        this.c = a;
+    }
+    
     public double perimiter(){
         return a + b + c;
     }
