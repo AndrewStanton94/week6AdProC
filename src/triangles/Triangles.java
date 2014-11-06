@@ -37,7 +37,7 @@ public class Triangles {
 
         do {
             repeat = false;
-            System.out.println("Enter 1 .. 3 Triangle sides. Append non numeric character if inputs < 3");
+            System.out.println("Enter Triangle sides.");
             try {
                 for (int i = 0; i < 3; i++) {
                     sides[i] = console.nextDouble();
@@ -45,26 +45,10 @@ public class Triangles {
             }
 
             catch (InputMismatchException ex) {
-                System.err.println(ex + "Precise catch");
-                switch (sides.length) {
-                    case 0:
-                        repeat = true;
-                        break;
-                    case 1:
-                        System.out.println("equi");
-                        return new EquilateralTriangle(sides[0]);
-                    case 2:
-                        System.out.println("RA");
-                        return new RightAngleTriangle(sides[0], sides[1]);
-                    default:
-                        System.err.println("Done goofed (?)");
-                        break;
-                }
+                System.err.println("Invalid inputs: " + ex);
+                repeat = true;
             }
-
-            catch (Exception ex) {
-                System.err.println(ex + "vague catch");
-            }
+            
             console.nextLine();
         }
         while (repeat);
