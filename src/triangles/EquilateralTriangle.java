@@ -10,8 +10,6 @@ package triangles;
  * @author up683693
  */
 public class EquilateralTriangle extends Triangle{
-    
-
     public EquilateralTriangle(double a) {
         super(a, a, a);
         type = "Equilateral";

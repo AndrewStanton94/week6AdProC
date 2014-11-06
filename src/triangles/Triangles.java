@@ -18,14 +18,6 @@ public class Triangles {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        Triangle scalene = new Triangle(2, 4, 5);
-//        scalene.info();
-//
-//        RightAngleTriangle ra = new RightAngleTriangle(3, 4);
-//        ra.info();
-//
-//        EquilateralTriangle equi = new EquilateralTriangle(2);
-//        equi.info();
         Triangle t = getTriangle();
         t.info();
     }
@@ -53,6 +45,10 @@ public class Triangles {
         }
         while (repeat);
 
+        if (sides[0] == sides[1] && sides[1] == sides[2])
+            return new EquilateralTriangle(sides[0]);
+        if (sides[0] == sides[1] || sides[1] == sides[2] || sides[0] == sides[2])
+            return new RightAngleTriangle(sides[0], (sides[0] == sides[1]) ? sides[2] : sides[1]); 
         return new Triangle(sides[0], sides[1], sides[2]);
     }
 }
