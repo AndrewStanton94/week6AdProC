@@ -17,6 +17,6 @@ public class RightAngleTriangle extends Triangle{
     }
     
     public double area(){
-        return a*b / c;
+        return a*b / 2;
     }
 }
